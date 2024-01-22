@@ -1,4 +1,6 @@
 // Questions array
+
+
 const questions = [
     {
         question: 'What is the output of `console.log(typeof 42)`?',
@@ -74,44 +76,61 @@ const questions = [
     },
     // Add more questions as needed
 ];
+
+function shuffleArray(array) {
+    return array.sort(() => Math.random() - 0.5);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    const startButton = document.getElementById('start-btn');
-    const questionContainerElement = document.getElementById('question-container');
-    const questionElement = document.getElementById('question');
-    const answerButtonsElement = document.getElementById('answer-buttons');
-    const timerElement = document.getElementById('timer');
-    const restartButton = document.getElementById('restart-btn');
-    const highScoreList = document.getElementById('high-score-list'); // Ensure this is in your HTML
-    const endQuizButton = document.getElementById('end-quiz-btn');
+    const elements = {
+        startButton: document.getElementById('start-btn'),
+        questionContainer: document.getElementById('question-container'),
+        questionElement: document.getElementById('question'),
+        answerButtons: document.getElementById('answer-buttons'),
+        timerElement: document.getElementById('timer'),
+        restartButton: document.getElementById('restart-btn'),
+        highScoreList: document.getElementById('high-score-list'),
+        endQuizButton: document.getElementById('end-quiz-btn'),
+        highScoresContainer: document.getElementById('high-scores-container'),
+        showHighScoresButton: document.getElementById('show-high-scores-btn'),
+        scoreElement: document.getElementById('score')
+    };
 
-    let scoreElement = document.getElementById('score'); // Element to display the score
+    elements.showHighScoresButton.addEventListener('click', () => {
+        elements.highScoresContainer.classList.toggle('hide');
+        // Optionally, call showHighScores here if the list needs to be updated each time
+        showHighScores();
+    });
 
-    let shuffledQuestions, currentQuestionIndex;
-    let timer;
-    let timeRemaining = 60; // Set initial time limit (in seconds)
-    let score = 0; // Variable to store the current score
+    let shuffledQuestions, currentQuestionIndex, timer, timeRemaining = 60, score = 0;
     
+    addEventListeners();
+    showHighScores();
 
-    startButton.addEventListener('click', startQuiz);
-    restartButton.addEventListener('click', restartQuiz);
-    endQuizButton.addEventListener('click', endQuiz);
+    function addEventListeners() {
+        elements.startButton.addEventListener('click', startQuiz);
+        elements.restartButton.addEventListener('click', restartQuiz);
+        elements.endQuizButton.addEventListener('click', endQuiz);
+        elements.showHighScoresButton.addEventListener('click', toggleHighScores);
+    }
 
     function startQuiz() {
-        startButton.classList.add('hide');
-        shuffledQuestions = questions.sort(() => Math.random() - .5);
+        elements.startButton.classList.add('hide');
+        shuffledQuestions = shuffleArray(questions);
         currentQuestionIndex = 0;
-        showQuestion(shuffledQuestions[currentQuestionIndex]);
-        score = 0; // Reset score
-        showHighScores();
-        scoreElement.innerText = score; // Reset score display
-        timeRemaining = 60; // Reset the timer for each new quiz
-        timerElement.innerText = timeRemaining;
-        timer = setInterval(updateTimer, 1000); // Start the timer
-        questionContainerElement.classList.remove('hide');
+        score = 0;
+        timeRemaining = 60;
+        elements.timerElement.innerText = timeRemaining;
+        timer = setInterval(updateTimer, 1000);
         setNextQuestion();
-        // Optionally show the restart button
-        restartButton.classList.remove('hide');
-        endQuizButton.classList.remove('hide'); // Show the end quiz button
+        toggleQuizState(true);
+    }
+
+    function toggleQuizState(isActive) {
+        elements.questionContainer.classList.toggle('hide', !isActive);
+        elements.endQuizButton.classList.toggle('hide', !isActive);
+        elements.restartButton.classList.toggle('hide', isActive);
+        elements.showHighScoresButton.classList.toggle('hide', isActive);
     }
 
     function updateTimer() {
@@ -119,107 +138,95 @@ document.addEventListener('DOMContentLoaded', () => {
             endQuiz();
         } else {
             timeRemaining--;
-            timerElement.innerText = timeRemaining;
+            elements.timerElement.innerText = timeRemaining;
         }
     }
+
     function endQuiz() {
         clearInterval(timer);
-        questionContainerElement.classList.add('hide');
-        endQuizButton.classList.add('hide'); // Hide the end quiz button
         saveHighScore();
-        showHighScores();
-        restartButton.classList.remove('hide'); // Optionally show the restart button
+        toggleQuizState(false);
     }
+
     function restartQuiz() {
         clearInterval(timer);
-        startQuiz(); // Reset and start the quiz again
-        restartButton.classList.add('hide'); // Hide the restart button
+        startQuiz();
     }
 
     function setNextQuestion() {
         resetState();
-
         showQuestion(shuffledQuestions[currentQuestionIndex]);
     }
 
     function showQuestion(question) {
-        questionElement.innerText = question.question;
-        // Randomize answers
-        question.answers.sort(() => Math.random() - 0.5);
-        question.answers.forEach(answer => {
+        elements.questionElement.innerText = question.question;
+        shuffleArray(question.answers).forEach(answer => {
             const button = document.createElement('button');
             button.innerText = answer.text;
             button.classList.add('btn');
-            if (answer.correct) {
-                button.dataset.correct = answer.correct;
-            }
+            button.dataset.correct = answer.correct;
             button.addEventListener('click', selectAnswer);
-            answerButtonsElement.appendChild(button);
+            elements.answerButtons.appendChild(button);
         });
     }
 
     function resetState() {
-        while (answerButtonsElement.firstChild) {
-            answerButtonsElement.removeChild(answerButtonsElement.firstChild);
-        }
+        elements.answerButtons.innerHTML = '';
+        elements.questionElement.innerText = '';
     }
 
     function selectAnswer(e) {
         const selectedButton = e.target;
-        const correct = selectedButton.dataset.correct === 'true'; // Convert string to boolean
-        if (correct) {
-            score += 10; // Increment score for correct answer
-            scoreElement.innerText = score; // Update score display
-        } else {
-            timeRemaining -= 10; // Time penalty for incorrect answer
-            updateTimer();
-        }
-        Array.from(answerButtonsElement.children).forEach(button => {
-            button.removeEventListener('click', selectAnswer); // Remove event listener to prevent multiple answers
-        });
-        if (shuffledQuestions.length > currentQuestionIndex + 1) {
-            setTimeout(() => {
-                currentQuestionIndex++;
+        const correct = selectedButton.dataset.correct === 'true';
+        updateScore(correct);
+        disableButtons();
+        setTimeout(() => {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < shuffledQuestions.length) {
                 setNextQuestion();
-            }, 1000); // Delay before showing next question
+            } else {
+                endQuiz();
+            }
+        }, 1000);
+    }
+
+    function updateScore(correct) {
+        if (correct) {
+            score += 10;
         } else {
-            setTimeout(endQuiz, 1000); // Delay before ending the quiz
+            timeRemaining -= 10;
         }
+        elements.scoreElement.innerText = score;
+        updateTimer();
+    }
+
+    function disableButtons() {
+        Array.from(elements.answerButtons.children).forEach(button => {
+            button.disabled = true;
+        });
     }
 
     function saveHighScore() {
         const initials = prompt("Enter your initials to save your score:");
         if (initials && initials.trim() !== "") {
             const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-            const newScore = { score: score, initials: initials };
-            highScores.push(newScore);
+            highScores.push({ score, initials });
             highScores.sort((a, b) => b.score - a.score);
-            highScores.splice(5); // Keep only top 5 scores
+            highScores.splice(5);
             localStorage.setItem("highScores", JSON.stringify(highScores));
+            showHighScores();
         }
     }
+
     function showHighScores() {
         const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
         const highScoreList = document.getElementById("high-score-list");
-    
-        // Update innerHTML of the high-score list
+
         highScoreList.innerHTML = highScores
             .map(score => `<li>${score.initials} - ${score.score}</li>`)
             .join("");
-    
-        const highScoresContainer = document.getElementById("high-scores-container");
-        highScoreList.classList.add('hide'); 
-        highScoreList.addEventListener('click', e => {
-            if (e.target.tagName === 'LI') {
-                const initials = e.target.innerText;
-                const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-                const newScore = { score: score, initials: initials };
-                highScores.push(newScore);
-                highScores.sort((a, b) => b.score - a.score);
-                highScores.splice(5); // Keep only top 5 scores
-                localStorage.setItem("highScores", JSON.stringify(highScores));
-                showHighScores();
-            }
-        });
+    }
+    function toggleHighScores() {
+        elements.highScoresContainer.classList.toggle('hide');
     }
 });

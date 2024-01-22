@@ -126,4 +126,63 @@ button:hover {
     background-color: #c82333;
 }
 
+#high-scores-container {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 250px;
+    font-family: 'Arial', sans-serif;
+}
 
+#high-score-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+#high-score-list li {
+    background-color: #f8f9fa;
+    border: 1px solid #eaeaea;
+    padding: 8px 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    font-family: 'Arial', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    text-decoration: none;
+
+}
+
+h2 {
+    color: #333333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#quiz-container {
+    /* Other styles ... */
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+}
