@@ -1,0 +1,84 @@
+{
+  "dataFormatVersion": "1.9.0",
+  "summary": {
+    "projectName": "web-api-quiz",
+    "summaryUrl": ".boost\\web-api-quiz.summary.boost-notebook",
+    "filesToAnalyze": 3,
+    "filesAnalyzed": 0,
+    "issues": [
+      "No summary file found at .boost\\web-api-quiz.summary.boost-notebook"
+    ]
+  },
+  "sectionSummary": {
+    "summary": {
+      "analysisType": "summary",
+      "status": "not-started",
+      "completedCells": 0,
+      "errorCells": 0,
+      "issueCells": 0,
+      "totalCells": 0,
+      "filesAnalyzed": 0
+    }
+  },
+  "files": {
+    "index.html": {
+      "sourceRelFile": "index.html",
+      "notebookRelFile": ".boost/index.html.boost-notebook",
+      "totalCells": 0,
+      "completedCells": 0,
+      "errorCells": 0,
+      "issueCells": 0,
+      "sections": {}
+    },
+    "assets\\js\\script.js": {
+      "sourceRelFile": "assets\\js\\script.js",
+      "notebookRelFile": ".boost/assets/js/script.js.boost-notebook",
+      "totalCells": 0,
+      "completedCells": 0,
+      "errorCells": 0,
+      "issueCells": 0,
+      "sections": {}
+    },
+    "assets\\css\\style.css": {
+      "sourceRelFile": "assets\\css\\style.css",
+      "notebookRelFile": ".boost/assets/css/style.css.boost-notebook",
+      "totalCells": 0,
+      "completedCells": 0,
+      "errorCells": 0,
+      "issueCells": 0,
+      "sections": {}
+    }
+  },
+  "account": {
+    "refreshed": true,
+    "enabled": true,
+    "status": "active",
+    "trialRemaining": 100,
+    "usageThisMonth": 0,
+    "discountedUsage": 0,
+    "lastOperationCost": 0,
+    "batchOperationCost": 0,
+    "balanceDue": 0,
+    "couponType": "Polyverse Boost Free Trial",
+    "org": "fredm23579",
+    "owner": "motta@g.ucla.edu",
+    "created": "2023-12-26",
+    "creditCardLinked": false
+  },
+  "uiState": {
+    "analysisState": "quiescent",
+    "activityBarState": {
+      "summaryViewState": {
+        "analysisMode": "analyze-all-mode",
+        "analysisTypesState": {
+          "security": true,
+          "compliance": true,
+          "documentation": true
+        }
+      }
+    }
+  },
+  "settings": {
+    "fileLimit": 100
+  }
+}
