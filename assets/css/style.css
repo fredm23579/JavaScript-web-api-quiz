@@ -87,4 +87,43 @@ button:hover {
     font-size: 18px;
 }
 
+#high-scores-container {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+}
+
+#high-score-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+#high-score-list li {
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+#end-quiz-btn {
+    background-color: #dc3545; /* Red color for the end button */
+    color: white;
+    /* Other styles similar to start and restart buttons */
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+#end-quiz-btn:hover {
+    background-color: #c82333;
+}
+
 

@@ -82,6 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const timerElement = document.getElementById('timer');
     const restartButton = document.getElementById('restart-btn');
     const highScoreList = document.getElementById('high-score-list'); // Ensure this is in your HTML
+    const endQuizButton = document.getElementById('end-quiz-btn');
+
     let scoreElement = document.getElementById('score'); // Element to display the score
 
     let shuffledQuestions, currentQuestionIndex;
@@ -92,18 +94,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     startButton.addEventListener('click', startQuiz);
     restartButton.addEventListener('click', restartQuiz);
+    endQuizButton.addEventListener('click', endQuiz);
 
     function startQuiz() {
         startButton.classList.add('hide');
         shuffledQuestions = questions.sort(() => Math.random() - .5);
         currentQuestionIndex = 0;
         score = 0; // Reset score
+        showHighScores();
         scoreElement.innerText = score; // Reset score display
         timeRemaining = 60; // Reset the timer for each new quiz
         timerElement.innerText = timeRemaining;
         timer = setInterval(updateTimer, 1000); // Start the timer
         questionContainerElement.classList.remove('hide');
         setNextQuestion();
+        endQuizButton.classList.remove('hide'); // Show the end quiz button
     }
 
     function updateTimer() {
@@ -114,15 +119,14 @@ document.addEventListener('DOMContentLoaded', () => {
             timerElement.innerText = timeRemaining;
         }
     }
-
     function endQuiz() {
         clearInterval(timer);
         questionContainerElement.classList.add('hide');
+        endQuizButton.classList.add('hide'); // Hide the end quiz button
         saveHighScore();
         showHighScores();
-        restartButton.classList.remove('hide'); // Show the restart button
+        restartButton.classList.remove('hide'); // Optionally show the restart button
     }
-
     function restartQuiz() {
         clearInterval(timer);
         startQuiz(); // Reset and start the quiz again
@@ -131,11 +135,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function setNextQuestion() {
         resetState();
+
         showQuestion(shuffledQuestions[currentQuestionIndex]);
     }
 
     function showQuestion(question) {
         questionElement.innerText = question.question;
+        // Randomize answers
+        question.answers.sort(() => Math.random() - 0.5);
         question.answers.forEach(answer => {
             const button = document.createElement('button');
             button.innerText = answer.text;
@@ -188,11 +195,16 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem("highScores", JSON.stringify(highScores));
         }
     }
-
     function showHighScores() {
         const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+        const highScoreList = document.getElementById("high-score-list");
+    
+        // Update innerHTML of the high-score list
         highScoreList.innerHTML = highScores
             .map(score => `<li>${score.initials} - ${score.score}</li>`)
             .join("");
+    
+        const highScoresContainer = document.getElementById("high-scores-container");
+        highScoresContainer.classList.remove('hide'); // Make sure this is visible
     }
 });
