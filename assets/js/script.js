@@ -100,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startButton.classList.add('hide');
         shuffledQuestions = questions.sort(() => Math.random() - .5);
         currentQuestionIndex = 0;
+        showQuestion(shuffledQuestions[currentQuestionIndex]);
         score = 0; // Reset score
         showHighScores();
         scoreElement.innerText = score; // Reset score display
@@ -108,6 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
         timer = setInterval(updateTimer, 1000); // Start the timer
         questionContainerElement.classList.remove('hide');
         setNextQuestion();
+        // Optionally show the restart button
+        restartButton.classList.remove('hide');
         endQuizButton.classList.remove('hide'); // Show the end quiz button
     }
 
@@ -205,6 +208,18 @@ document.addEventListener('DOMContentLoaded', () => {
             .join("");
     
         const highScoresContainer = document.getElementById("high-scores-container");
-        highScoresContainer.classList.remove('hide'); // Make sure this is visible
+        highScoreList.classList.add('hide'); 
+        highScoreList.addEventListener('click', e => {
+            if (e.target.tagName === 'LI') {
+                const initials = e.target.innerText;
+                const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+                const newScore = { score: score, initials: initials };
+                highScores.push(newScore);
+                highScores.sort((a, b) => b.score - a.score);
+                highScores.splice(5); // Keep only top 5 scores
+                localStorage.setItem("highScores", JSON.stringify(highScores));
+                showHighScores();
+            }
+        });
     }
 });
