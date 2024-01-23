@@ -3,7 +3,7 @@
   "summary": {
     "projectName": "web-api-quiz",
     "summaryUrl": ".boost\\web-api-quiz.summary.boost-notebook",
-    "filesToAnalyze": 3,
+    "filesToAnalyze": 4,
     "filesAnalyzed": 0,
     "issues": [
       "No summary file found at .boost\\web-api-quiz.summary.boost-notebook"
@@ -42,6 +42,15 @@
     "assets\\css\\style.css": {
       "sourceRelFile": "assets\\css\\style.css",
       "notebookRelFile": ".boost/assets/css/style.css.boost-notebook",
+      "totalCells": 0,
+      "completedCells": 0,
+      "errorCells": 0,
+      "issueCells": 0,
+      "sections": {}
+    },
+    "README.md": {
+      "sourceRelFile": "README.md",
+      "notebookRelFile": ".boost/README.md.boost-notebook",
       "totalCells": 0,
       "completedCells": 0,
       "errorCells": 0,

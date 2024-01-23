@@ -93,14 +93,10 @@ document.addEventListener('DOMContentLoaded', () => {
         endQuizButton: document.getElementById('end-quiz-btn'),
         highScoresContainer: document.getElementById('high-scores-container'),
         showHighScoresButton: document.getElementById('show-high-scores-btn'),
-        scoreElement: document.getElementById('score')
+        scoreElement: document.getElementById('score'),
+        form: document.getElementById('form'),
+        input: document.getElementById('input')
     };
-
-    elements.showHighScoresButton.addEventListener('click', () => {
-        elements.highScoresContainer.classList.toggle('hide');
-        // Optionally, call showHighScores here if the list needs to be updated each time
-        showHighScores();
-    });
 
     let shuffledQuestions, currentQuestionIndex, timer, timeRemaining = 60, score = 0;
     
@@ -115,22 +111,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startQuiz() {
-        elements.startButton.classList.add('hide');
+        setQuizState(true);
         shuffledQuestions = shuffleArray(questions);
         currentQuestionIndex = 0;
         score = 0;
+        elements.timerElement.classList.remove('hide'); 
         timeRemaining = 60;
         elements.timerElement.innerText = timeRemaining;
         timer = setInterval(updateTimer, 1000);
         setNextQuestion();
-        toggleQuizState(true);
     }
 
-    function toggleQuizState(isActive) {
+    function setQuizState(isActive) {
         elements.questionContainer.classList.toggle('hide', !isActive);
         elements.endQuizButton.classList.toggle('hide', !isActive);
         elements.restartButton.classList.toggle('hide', isActive);
         elements.showHighScoresButton.classList.toggle('hide', isActive);
+        elements.form.classList.toggle('hide', isActive);
+        elements.highScoresContainer.classList.toggle('hide', isActive);
     }
 
     function updateTimer() {
@@ -145,7 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function endQuiz() {
         clearInterval(timer);
         saveHighScore();
-        toggleQuizState(false);
+        setQuizState(false);
+        showHighScores();
     }
 
     function restartQuiz() {
@@ -207,26 +206,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function saveHighScore() {
-        const initials = prompt("Enter your initials to save your score:");
-        if (initials && initials.trim() !== "") {
-            const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-            highScores.push({ score, initials });
-            highScores.sort((a, b) => b.score - a.score);
-            highScores.splice(5);
-            localStorage.setItem("highScores", JSON.stringify(highScores));
-            showHighScores();
-        }
+        elements.form.classList.remove('hide');
+        elements.form.onsubmit = (e) => {
+            e.preventDefault();
+            const initials = elements.input.value;
+            if (initials.trim() !== '') {
+                const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+                highScores.push({ score, initials });
+                highScores.sort((a, b) => b.score - a.score);
+                highScores.splice(5);
+                localStorage.setItem('highScores', JSON.stringify(highScores));
+                showHighScores();
+                elements.form.classList.add('hide');
+            }
+        };
     }
 
     function showHighScores() {
-        const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-        const highScoreList = document.getElementById("high-score-list");
-
-        highScoreList.innerHTML = highScores
-            .map(score => `<li>${score.initials} - ${score.score}</li>`)
-            .join("");
+        const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+        elements.highScoreList.innerHTML = highScores
+            .map(scoreItem => ('<li>' + scoreItem.initials + ' - ' + scoreItem.score + '</li>'))
+            .join('');
+        elements.highScoresContainer.classList.remove('hide');
+        elements.showHighScoresButton.classList.add('hide');
     }
+
     function toggleHighScores() {
-        elements.highScoresContainer.classList.toggle('hide');
+        const isHidden = elements.highScoresContainer.classList.contains('hide');
+        if (isHidden) {
+            showHighScores();
+        } else {
+            elements.highScoresContainer.classList.add('hide');
+            elements.showHighScoresButton.classList.remove('hide');
+        }
     }
 });

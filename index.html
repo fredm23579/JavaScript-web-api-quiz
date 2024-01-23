@@ -3,36 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
     <title>JavaScript Quiz</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <div id="quiz-container">
         <h1>JavaScript Quiz</h1>
-
         <div id="score-display">Score: <span id="score">0</span></div>
-
         <button id="start-btn">Start Quiz</button>
 
         <div id="question-container" class="hide">
-            <div id="question">Question</div>
+            <div id="question"></div>
             <div id="answer-buttons" class="btn-grid"></div>
         </div>
 
-        <div id="timer-display">Time Remaining: <span id="timer"></span> seconds</div>
+        <div id="timer-display" class="hide">Time Remaining: <span id="timer"></span> seconds</div>
 
         <button id="restart-btn" class="hide">Restart Quiz</button>
         <button id="end-quiz-btn" class="hide">End Quiz</button>
         <button id="show-high-scores-btn" class="hide">Show High Scores</button>
-        <div id="high-scores-container" class="hide">
 
-            <div id="high-scores" class="hide">
-                <h2>High Scores</h2>
-                <ul id="high-score-list"></ul>
-            </div>
-                        
+        <div id="high-scores-container" class="hide">
+            <h2>High Scores</h2>
+            <ul id="high-score-list"></ul>
+            <form id="form" class="hide">
+                <input type="text" id="input" placeholder="Enter Initials" aria-label="Enter Initials">
+                <button type="submit">Submit</button>
+            </form>
         </div>
     </div>
 
