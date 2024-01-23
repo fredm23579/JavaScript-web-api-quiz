@@ -2,16 +2,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+
 }
 
-body, html {
+body,
+html {
     height: 100%;
     background-color: #f0f2f5;
 }
 
 #quiz-container {
-   
+
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
@@ -25,13 +26,14 @@ h1 {
     color: #333;
     margin-bottom: 20px;
 }
+
 #form {
     display: flex;
     flex-direction: column;
-  
-   
+
+
     right: 20px;
-  
+
     bottom: 20px;
     position: fixed;
     z-index: 100;
@@ -43,7 +45,7 @@ h1 {
     min-width: 200px;
     max-height: 200px;
     min-height: 200px;
-    
+
     font-size: 16px;
 }
 
@@ -56,6 +58,7 @@ input {
     font-size: 16px;
     transition: border-color 0.2s;
 }
+
 button {
     display: inline;
     background-color: #007bff;
@@ -84,7 +87,7 @@ button:hover {
 }
 
 #timer-display {
-    display: flow;
+    display: flex;
     font-size: 18px;
     font-style: bold;
     margin-top: 20px;
@@ -119,6 +122,7 @@ button:hover {
     border-radius: 5px;
     font-size: 18px;
 }
+
 #high-score-list {
     list-style-type: none;
     padding: 0;
@@ -138,9 +142,11 @@ button:hover {
     justify-content: space-between;
     align-items: center;
     text-align: center;
-} 
+}
+
 #end-quiz-btn {
-    background-color: #dc3545; /* Red color for the end button */
+    background-color: #dc3545;
+    /* Red color for the end button */
     color: white;
     /* Other styles similar to start and restart buttons */
     border: none;
@@ -167,7 +173,7 @@ button:hover {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 250px;
-    
+
 }
 
 #high-score-list {
@@ -220,6 +226,7 @@ h2 {
     transform: translateY(-50%);
     margin: auto;
 }
+
 h2 {
     color: #333333;
     font-size: 18px;
@@ -237,13 +244,15 @@ h2 {
 
 #clear-high-scores-btn {
     display: grid;
-    background-color: #dc3545; /* Red color for clear button */
+    background-color: #dc3545;
+    /* Red color for clear button */
     margin-top: 20px;
 }
 
 #clear-high-scores-btn:hover {
     background-color: #c82333;
 }
+
 input[type="text"] {
     padding: 8px;
     margin-right: 10px;
@@ -267,80 +276,105 @@ input[type="submit"]:hover {
     #high-score-list li {
         font-size: 12px;
     }
+
     #end-quiz-btn {
         font-size: 12px;
     }
+
     #score-display {
         font-size: 12px;
     }
+
     #timer-display {
         font-size: 12px;
     }
+
     #high-scores {
         font-size: 12px;
     }
+
     #high-scores-container {
         font-size: 12px;
     }
+
     #form {
         font-size: 12px;
     }
+
     #quiz-container {
         font-size: 12px;
     }
+
     h1 {
         font-size: 20px;
     }
+
     h2 {
         font-size: 16px;
     }
+
     input[type="text"] {
         font-size: 12px;
     }
+
     input[type="submit"] {
         font-size: 12px;
     }
+
     #clear-high-scores-btn {
         font-size: 12px;
-    }    
+    }
 }
+
 @media screen and (max-width: 480px) {
     #high-score-list li {
         font-size: 10px;
     }
+
     #end-quiz-btn {
         font-size: 10px;
     }
+
     #score-display {
         font-size: 10px;
     }
+
     #timer-display {
         font-size: 10px;
     }
+
     #high-scores {
         font-size: 10px;
     }
+
     #high-scores-container {
         font-size: 10px;
     }
-    #form {#answer-buttons
-        font-size: 10px;
+
+    #form {
+        #answer-buttons font-size: 10px;
     }
+
     #quiz-container {
         font-size: 10px;
     }
+
     h1 {
         font-size: 16px;
     }
+
     h2 {
         font-size: 14px;
     }
+
     input[type="text"] {
         font-size: 10px;
     }
+
     input[type="submit"] {
         font-size: 10px;
     }
+
     #clear-high-scores-btn {
         font-size: 10px;
         margin-top: 10px;
@@ -349,118 +383,65 @@ input[type="submit"]:hover {
         margin-left: 10px;
     }
 }
-/* For non-retina based devices that have a smaller screen */
-@media only screen and (min-width: 320px) {
 
-}
+/* For non-retina based devices that have a smaller screen */
+@media only screen and (min-width: 320px) {}
 
 /* Retina enabled devices with smaller screen */
-@media  only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 320px), 
-only screen and ( -o-min-device-pixel-ratio: 2/1) and (min-width: 320px),  
-only screen and ( min-device-pixel-ratio: 2) and (min-width: 320px),  
-only screen and ( min-resolution: 192dpi) and (min-width: 320px),  
-only screen and ( min-resolution: 2dppx) and (min-width: 320px) {
-
-
-}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 320px),
+only screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: 320px),
+only screen and (min-device-pixel-ratio: 2) and (min-width: 320px),
+only screen and (min-resolution: 192dpi) and (min-width: 320px),
+only screen and (min-resolution: 2dppx) and (min-width: 320px) {}
 
 /*Non- retina based devices with medium screen size */
-@media only screen and (min-width: 768px) {
-
-}
+@media only screen and (min-width: 768px) {}
 
 /* Retina devices with medium screen size */
-@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px),  
-only screen and ( -o-min-device-pixel-ratio: 2/1) and (min-width: 768px),  
-only screen and ( min-device-pixel-ratio: 2) and (min-width: 768px),  
-only screen and ( min-resolution: 192dpi) and (min-width: 768px),  
-only screen and ( min-resolution: 2dppx) and (min-width: 768px) {
-
-}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px),
+only screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: 768px),
+only screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
+only screen and (min-resolution: 192dpi) and (min-width: 768px),
+only screen and (min-resolution: 2dppx) and (min-width: 768px) {}
 
 /* Non-retina devices with large screen sizes */
-@media only screen and (min-width: 1200px) {
-
-}
+@media only screen and (min-width: 1200px) {}
 
 /* Retina devices with large screen sizes */
-@media  only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1200px),  
-only screen and ( -o-min-device-pixel-ratio: 2/1) and (min-width: 1200px),  
-only screen and ( min-device-pixel-ratio: 2) and (min-width: 1200px),  
-only screen and ( min-resolution: 192dpi) and (min-width: 1200px),  
-only screen and ( min-resolution: 2dppx) and (min-width: 1200px) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1200px),
+only screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: 1200px),
+only screen and (min-device-pixel-ratio: 2) and (min-width: 1200px),
+only screen and (min-resolution: 192dpi) and (min-width: 1200px),
+only screen and (min-resolution: 2dppx) and (min-width: 1200px) {}
 
-}
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 480px) {
-
-}
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {}
 
 /* Smartphones (landscape) ----------- */
-@media only screen 
-and (min-width : 321px) {
-
-}
+@media only screen and (min-width : 321px) {}
 
 /* Smartphones (portrait) ----------- */
-@media only screen 
-and (max-width : 320px) {
-
-}
+@media only screen and (max-width : 320px) {}
 
 /* iPads (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) {
-
-}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {}
 
 /* iPads (landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : landscape) {
-
-}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {}
 
 /* iPads (portrait) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (orientation : portrait) {
-	
-}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {}
 
 /* iPad 3 (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (-webkit-min-device-pixel-ratio : 2),
-only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
-and (min-resolution: 192dpi) { 
-
-}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio : 2),
+only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (min-resolution: 192dpi) {}
 
 /* Desktops and laptops ----------- */
-@media only screen 
-and (min-width : 1224px) {
-	
-}
+@media only screen and (min-width : 1224px) {}
 
 /* Large screens ----------- */
-@media only screen 
-and (min-width : 1824px) {
-	
-}
+@media only screen and (min-width : 1824px) {}
 
 /* Retina displays ----------- */
-@media  only screen 
-and (-webkit-min-device-pixel-ratio : 2), 
-only screen 
-and (min-resolution: 192dpi) {
-
-}
+@media only screen and (-webkit-min-device-pixel-ratio : 2),
+only screen and (min-resolution: 192dpi) {}

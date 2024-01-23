@@ -1,6 +1,4 @@
 // Questions array
-
-
 const questions = [
     {
         question: 'What is the output of `console.log(typeof 42)`?',
@@ -12,7 +10,8 @@ const questions = [
         ]
     },
     {
-        question: 'Which method can be used to convert a JSON string into a JavaScript object?',
+        question:
+            'Which method can be used to convert a JSON string into a JavaScript object?',
         answers: [
             { text: 'JSON.parse()', correct: true },
             { text: 'JSON.stringify()', correct: false },
@@ -74,11 +73,67 @@ const questions = [
             { text: 'Error', correct: false }
         ]
     },
-    // Add more questions as needed
-];
+    {
+        question: 'What is the output of `console.log(typeof 42)`?',
+        answers: [
+            { text: '"number"', correct: true },
+            { text: '"object"', correct: false },
+            { text: '"string"', correct: false },
+            { text: '"undefined"', correct: false }
+        ]
+    },
+    {
+        question:
+            'Which method removes the last element from an array and returns that element in JavaScript?',
+        answers: [
+            { text: 'pop()', correct: true },
+            { text: 'push()', correct: false },
+            { text: 'shift()', correct: false },
+            { text: 'unshift()', correct: false }
+        ]
+    },
+    {
+        question:
+            'What is the correct syntax for referring to an external script called "app.js"?',
+        answers: [
+            { text: '<script src="app.js"></script>', correct: true },
+            { text: '<script href="app.js"></script>', correct: false },
+            { text: '<script ref="app.js"></script>', correct: false },
+            { text: '<script name="app.js"></script>', correct: false }
+        ]
+    },
+    {
+        question:
+            'How do you write a conditional statement for executing some statements only if "i" is NOT equal to 5?',
+        answers: [
+            { text: 'if (i != 5)', correct: true },
+            { text: 'if i <> 5', correct: false },
+            { text: 'if (i =! 5)', correct: false },
+            { text: 'if (i ==! 5)', correct: false }
+        ]
+    },
+    {
+        question: 'Which event occurs when the user clicks on an HTML element?',
+        answers: [
+            { text: 'onclick', correct: true },
+            { text: 'onchange', correct: false },
+            { text: 'onmouseover', correct: false },
+            { text: 'onmouseclick', correct: false }
+        ]
+    },
+    {
+        question: 'How do you declare a JavaScript variable?',
+        answers: [
+            { text: 'var myVariable;', correct: true },
+            { text: 'v myVariable;', correct: false },
+            { text: 'variable myVariable;', correct: false },
+            { text: 'var = myVariable;', correct: false }
+        ]
+    }
+]
 
 function shuffleArray(array) {
-    return array.sort(() => Math.random() - 0.5);
+    return array.sort(() => Math.random() - 0.5)
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -96,156 +151,171 @@ document.addEventListener('DOMContentLoaded', () => {
         scoreElement: document.getElementById('score'),
         form: document.getElementById('form'),
         input: document.getElementById('input')
-    };
+    }
 
-    let shuffledQuestions, currentQuestionIndex, timer, timeRemaining = 60, score = 0;
-    
-    addEventListeners();
-    showHighScores();
-    const clearHighScoresButton = document.getElementById('clear-high-scores-btn');
+    let shuffledQuestions,
+        currentQuestionIndex,
+        timer,
+        timeRemaining = 60,
+        score = 0
 
-    clearHighScoresButton.addEventListener('click', clearHighScores);
+    addEventListeners()
+    showHighScores()
+    const clearHighScoresButton = document.getElementById('clear-high-scores-btn')
+
+    clearHighScoresButton.addEventListener('click', clearHighScores)
 
     function clearHighScores() {
-        localStorage.removeItem("highScores");
-        showHighScores(); // Update the display of high scores
+        localStorage.removeItem('highScores')
+        showHighScores() // Update the display of high scores
     }
 
     function addEventListeners() {
-        elements.startButton.addEventListener('click', startQuiz);
-        elements.restartButton.addEventListener('click', restartQuiz);
-        elements.endQuizButton.addEventListener('click', endQuiz);
-        elements.showHighScoresButton.addEventListener('click', toggleHighScores);
+        elements.startButton.addEventListener('click', startQuiz)
+        elements.restartButton.addEventListener('click', restartQuiz)
+        elements.endQuizButton.addEventListener('click', endQuiz)
+        elements.showHighScoresButton.addEventListener('click', toggleHighScores)
     }
 
     function startQuiz() {
-        setQuizState(true);
-        shuffledQuestions = shuffleArray(questions);
-        currentQuestionIndex = 0;
-        score = 0;
-        elements.timerElement.classList.remove('hide'); 
-        timeRemaining = 60;
-        elements.timerElement.innerText = timeRemaining;
-        timer = setInterval(updateTimer, 1000);
-        setNextQuestion();
+        setQuizState(true)
+        elements.startButton.classList.add('hide')
+        elements.questionContainer.classList.remove('hide')
+        elements.showHighScoresButton.classList.add('hide')
+        elements.form.classList.add('hide')
+        elements.restartButton.classList.add('hide')
+        elements.highScoresContainer.classList.add('hide')
+        
+        shuffledQuestions = shuffleArray(questions)
+        currentQuestionIndex = 0
+        score = 0
+        elements.timerElement.classList.remove('hide')
+        timeRemaining = 60
+        elements.timerElement.innerText = timeRemaining
+        timer = setInterval(updateTimer, 1000)
+        setNextQuestion()
     }
 
     function setQuizState(isActive) {
-        elements.questionContainer.classList.toggle('hide', !isActive);
-        elements.endQuizButton.classList.toggle('hide', !isActive);
-        elements.restartButton.classList.toggle('hide', isActive);
-        elements.showHighScoresButton.classList.toggle('hide', isActive);
-        elements.form.classList.toggle('hide', isActive);
-        elements.highScoresContainer.classList.toggle('hide', isActive);
+        elements.questionContainer.classList.toggle('hide', !isActive)
+        elements.endQuizButton.classList.toggle('hide', !isActive)
+        elements.restartButton.classList.toggle('hide', isActive)
+        elements.showHighScoresButton.classList.toggle('hide', isActive)
+        elements.form.classList.toggle('hide', isActive)
+        elements.highScoresContainer.classList.toggle('hide', isActive)
     }
 
     function updateTimer() {
         if (timeRemaining <= 0) {
-            endQuiz();
+            endQuiz()
         } else {
-            timeRemaining--;
-            elements.timerElement.innerText = timeRemaining;
+            timeRemaining--
+            elements.timerElement.innerText = timeRemaining
         }
     }
 
     function endQuiz() {
-        clearInterval(timer);
-        saveHighScore();
-        setQuizState(false);
-        showHighScores();
+        clearInterval(timer)
+        saveHighScore()
+        setQuizState(false)
+        showHighScores()
     }
 
     function restartQuiz() {
-        clearInterval(timer);
-        startQuiz();
+        clearInterval(timer)
+        startQuiz()
     }
 
     function setNextQuestion() {
-        resetState();
-        showQuestion(shuffledQuestions[currentQuestionIndex]);
+        resetState()
+        showQuestion(shuffledQuestions[currentQuestionIndex])
     }
 
     function showQuestion(question) {
-        elements.questionElement.innerText = question.question;
+        elements.questionElement.innerText = question.question
+        elements.questionElement.style.fontWeight = "bold";
         shuffleArray(question.answers).forEach(answer => {
-            const button = document.createElement('button');
-            button.innerText = answer.text;
-            button.classList.add('btn');
-            button.dataset.correct = answer.correct;
-            button.addEventListener('click', selectAnswer);
-            elements.answerButtons.appendChild(button);
-        });
+            const button = document.createElement('button')
+            button.innerText = answer.text
+            button.classList.add('btn')
+            button.dataset.correct = answer.correct
+            button.addEventListener('click', selectAnswer)
+            elements.answerButtons.appendChild(button)
+        })
     }
 
     function resetState() {
-        elements.answerButtons.innerHTML = '';
-        elements.questionElement.innerText = '';
+        elements.answerButtons.innerHTML = ''
+        elements.questionElement.innerText = ''
     }
 
     function selectAnswer(e) {
-        const selectedButton = e.target;
-        const correct = selectedButton.dataset.correct === 'true';
-        updateScore(correct);
-        disableButtons();
+        const selectedButton = e.target
+        const correct = selectedButton.dataset.correct === 'true'
+        updateScore(correct)
+        disableButtons()
         setTimeout(() => {
-            currentQuestionIndex++;
+            currentQuestionIndex++
             if (currentQuestionIndex < shuffledQuestions.length) {
-                setNextQuestion();
+                setNextQuestion()
             } else {
-                endQuiz();
+                endQuiz()
             }
-        }, 1000);
+        }, 1000)
     }
 
     function updateScore(correct) {
         if (correct) {
-            score += 10;
+            score += 10
         } else {
-            timeRemaining -= 10;
+            timeRemaining -= 10
         }
-        elements.scoreElement.innerText = score;
-        updateTimer();
+        elements.scoreElement.innerText = score
+        updateTimer()
     }
 
     function disableButtons() {
         Array.from(elements.answerButtons.children).forEach(button => {
-            button.disabled = true;
-        });
+            button.disabled = true
+        })
     }
 
     function saveHighScore() {
-        elements.form.classList.remove('hide');
-        elements.form.onsubmit = (e) => {
-            e.preventDefault();
-            const initials = elements.input.value;
+        elements.form.classList.remove('hide')
+        elements.form.onsubmit = e => {
+            e.preventDefault()
+            const initials = elements.input.value
             if (initials.trim() !== '') {
-                const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
-                highScores.push({ score, initials });
-                highScores.sort((a, b) => b.score - a.score);
-                highScores.splice(5);
-                localStorage.setItem('highScores', JSON.stringify(highScores));
-                showHighScores();
-                elements.form.classList.add('hide');
+                const highScores = JSON.parse(localStorage.getItem('highScores')) || []
+                highScores.push({ score, initials })
+                highScores.sort((a, b) => b.score - a.score)
+                highScores.splice(5)
+                localStorage.setItem('highScores', JSON.stringify(highScores))
+                showHighScores()
+                elements.form.classList.add('hide')
             }
-        };
+        }
     }
 
     function showHighScores() {
-        const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+        const highScores = JSON.parse(localStorage.getItem('highScores')) || []
         elements.highScoreList.innerHTML = highScores
-            .map(scoreItem => ('<li>' + scoreItem.initials + ' - ' + scoreItem.score + '</li>'))
-            .join('');
-        elements.highScoresContainer.classList.remove('hide');
-        elements.showHighScoresButton.classList.add('hide');
+            .map(
+                scoreItem =>
+                    '<li>' + scoreItem.initials + ' - ' + scoreItem.score + '</li>'
+            )
+            .join('')
+        elements.highScoresContainer.classList.remove('hide')
+        elements.showHighScoresButton.classList.add('hide')
     }
 
     function toggleHighScores() {
-        const isHidden = elements.highScoresContainer.classList.contains('hide');
+        const isHidden = elements.highScoresContainer.classList.contains('hide')
         if (isHidden) {
-            showHighScores();
+            showHighScores()
         } else {
-            elements.highScoresContainer.classList.add('hide');
-            elements.showHighScoresButton.classList.remove('hide');
+            elements.highScoresContainer.classList.add('hide')
+            elements.showHighScoresButton.classList.remove('hide')
         }
     }
-});
+})
