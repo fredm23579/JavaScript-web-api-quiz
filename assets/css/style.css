@@ -48,6 +48,7 @@ h1 {
 }
 
 input {
+    display: block;
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 5px;
@@ -56,6 +57,7 @@ input {
     transition: border-color 0.2s;
 }
 button {
+    display: inline;
     background-color: #007bff;
     color: white;
     border: none;
@@ -84,6 +86,7 @@ button:hover {
 #timer-display {
     display: flow;
     font-size: 18px;
+    font-style: bold;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -206,6 +209,7 @@ button:hover {
 h2 {
     color: #333333;
     font-size: 18px;
+    font-style: bold;
     margin-bottom: 10px;
 }
 
@@ -219,6 +223,7 @@ h2 {
 h2 {
     color: #333333;
     font-size: 18px;
+    font-style: bold;
     margin-bottom: 10px;
 }
 
@@ -228,4 +233,234 @@ h2 {
     top: 50%;
     transform: translateY(-50%);
     margin: auto;
+}
+
+#clear-high-scores-btn {
+    display: grid;
+    background-color: #dc3545; /* Red color for clear button */
+    margin-top: 20px;
+}
+
+#clear-high-scores-btn:hover {
+    background-color: #c82333;
+}
+input[type="text"] {
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+input[type="submit"] {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+}
+
+input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+@media screen and (max-width: 768px) {
+    #high-score-list li {
+        font-size: 12px;
+    }
+    #end-quiz-btn {
+        font-size: 12px;
+    }
+    #score-display {
+        font-size: 12px;
+    }
+    #timer-display {
+        font-size: 12px;
+    }
+    #high-scores {
+        font-size: 12px;
+    }
+    #high-scores-container {
+        font-size: 12px;
+    }
+    #form {
+        font-size: 12px;
+    }
+    #quiz-container {
+        font-size: 12px;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    h2 {
+        font-size: 16px;
+    }
+    input[type="text"] {
+        font-size: 12px;
+    }
+    input[type="submit"] {
+        font-size: 12px;
+    }
+    #clear-high-scores-btn {
+        font-size: 12px;
+    }    
+}
+@media screen and (max-width: 480px) {
+    #high-score-list li {
+        font-size: 10px;
+    }
+    #end-quiz-btn {
+        font-size: 10px;
+    }
+    #score-display {
+        font-size: 10px;
+    }
+    #timer-display {
+        font-size: 10px;
+    }
+    #high-scores {
+        font-size: 10px;
+    }
+    #high-scores-container {
+        font-size: 10px;
+    }
+    #form {#answer-buttons
+        font-size: 10px;
+    }
+    #quiz-container {
+        font-size: 10px;
+    }
+    h1 {
+        font-size: 16px;
+    }
+    h2 {
+        font-size: 14px;
+    }
+    input[type="text"] {
+        font-size: 10px;
+    }
+    input[type="submit"] {
+        font-size: 10px;
+    }
+    #clear-high-scores-btn {
+        font-size: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+}
+/* For non-retina based devices that have a smaller screen */
+@media only screen and (min-width: 320px) {
+
+}
+
+/* Retina enabled devices with smaller screen */
+@media  only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 320px), 
+only screen and ( -o-min-device-pixel-ratio: 2/1) and (min-width: 320px),  
+only screen and ( min-device-pixel-ratio: 2) and (min-width: 320px),  
+only screen and ( min-resolution: 192dpi) and (min-width: 320px),  
+only screen and ( min-resolution: 2dppx) and (min-width: 320px) {
+
+
+}
+
+/*Non- retina based devices with medium screen size */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Retina devices with medium screen size */
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px),  
+only screen and ( -o-min-device-pixel-ratio: 2/1) and (min-width: 768px),  
+only screen and ( min-device-pixel-ratio: 2) and (min-width: 768px),  
+only screen and ( min-resolution: 192dpi) and (min-width: 768px),  
+only screen and ( min-resolution: 2dppx) and (min-width: 768px) {
+
+}
+
+/* Non-retina devices with large screen sizes */
+@media only screen and (min-width: 1200px) {
+
+}
+
+/* Retina devices with large screen sizes */
+@media  only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1200px),  
+only screen and ( -o-min-device-pixel-ratio: 2/1) and (min-width: 1200px),  
+only screen and ( min-device-pixel-ratio: 2) and (min-width: 1200px),  
+only screen and ( min-resolution: 192dpi) and (min-width: 1200px),  
+only screen and ( min-resolution: 2dppx) and (min-width: 1200px) {
+
+}
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+	
+}
+
+/* iPad 3 (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (-webkit-min-device-pixel-ratio : 2),
+only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (min-resolution: 192dpi) { 
+
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) {
+	
+}
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+	
+}
+
+/* Retina displays ----------- */
+@media  only screen 
+and (-webkit-min-device-pixel-ratio : 2), 
+only screen 
+and (min-resolution: 192dpi) {
+
 }

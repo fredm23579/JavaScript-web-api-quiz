@@ -102,6 +102,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     addEventListeners();
     showHighScores();
+    const clearHighScoresButton = document.getElementById('clear-high-scores-btn');
+
+    clearHighScoresButton.addEventListener('click', clearHighScores);
+
+    function clearHighScores() {
+        localStorage.removeItem("highScores");
+        showHighScores(); // Update the display of high scores
+    }
 
     function addEventListeners() {
         elements.startButton.addEventListener('click', startQuiz);
