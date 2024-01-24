@@ -3,34 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JavaScript Quiz</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <div id="quiz-container">
-        <h1>JavaScript Quiz</h1>
-        <div id="score-display">Score: <span id="score">0</span></div>
-        <button id="start-btn">Start Quiz</button>
+    <div id="quiz-container"> <!-- Quiz Container -->
+        <h1>JavaScript Quiz</h1> <!-- Quiz Title   -->
+        <div id="score-display">Score: <span id="score">0</span></div> <!-- Score Display -->
+        <button id="start-btn">Start Quiz</button> <!-- Start Quiz Button -->
 
-        <div id="question-container" class="hide">
-            <div id="question"></div>
-            <div id="answer-buttons" class="btn-grid"></div>
+        <div id="question-container" class="hide"> <!-- Question Container -->
+            <div id="question"></div> <!-- Question -->
+            <div id="answer-buttons" class="btn-grid"></div> <!-- Answer Buttons -->
         </div>
 
-        <div id="timer-display" class="hide">Time Remaining: <span id="timer"></span> seconds</div>
+        <div id="timer-display" class="hide">Time Remaining:  <span id="timer"></span> seconds</div> <!-- Timer Display -->
 
-        <button id="restart-btn" class="hide">Restart Quiz</button>
-        <button id="end-quiz-btn" class="hide">End Quiz</button>
-        <button id="show-high-scores-btn" class="hide">Show High Scores</button>
-        <button id="clear-high-scores-btn" class="hide">Clear High Scores</button>
+        <button id="restart-btn" class="hide">Restart Quiz</button> <!-- Restart Quiz Button -->
+        <button id="end-quiz-btn" class="hide">End Quiz</button> <!-- End Quiz Button -->
+        <button id="show-high-scores-btn" class="hide">Show High Scores</button> <!-- Show High Scores Button -->
+        <button id="clear-high-scores-btn" class="hide">Clear High Scores</button> <!-- Clear High Scores Button -->
 
 
-        <div id="high-scores-container" class="hide">
-            <h2>High Scores</h2>
-            <ul id="high-score-list"></ul>
-            <form id="form">
-                <input type="text" id="input" placeholder="Enter Initials" aria-label="Enter Initials">
-                <button type="submit">Submit</button>
+        <div id="high-scores-container" class="hide"> <!-- High Scores Container -->
+            <h2>High Scores</h2> <!-- High Scores Title -->
+            <ul id="high-score-list"></ul> <!-- High Scores List -->
+            <form id="form"> <!-- Form for inputting initials -->
+                <input type="text" id="input" placeholder="Enter Initials" aria-label="Enter Initials"> <!-- Input for initials -->
+                <button type="submit">Submit</button> <!-- Submit Button -->
             </form>
         </div>
     </div>

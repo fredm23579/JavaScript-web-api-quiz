@@ -1,17 +1,17 @@
-* {
+* { /* Reset default browser styles */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 
 }
 
-body,
-html {
+body, 
+html { /* Set body and html to 100% height */
     height: 100%;
     background-color: #f0f2f5;
 }
 
-#quiz-container {
+#quiz-container { /* Quiz Container */
 
     max-width: 600px;
     margin: 0 auto;
@@ -22,12 +22,12 @@ html {
     text-align: center;
 }
 
-h1 {
+h1 { /* Quiz Title */
     color: #333;
     margin-bottom: 20px;
 }
 
-#form {
+#form { /* Form */
     display: flex;
     flex-direction: column;
 
@@ -44,7 +44,7 @@ h1 {
     font-size: 16px;
 }
 
-input {
+input { /* Form Input */
     display: block;
     margin-bottom: 10px;
     padding: 10px;
@@ -54,7 +54,7 @@ input {
     transition: border-color 0.2s;
 }
 
-button {
+button { /* Form Button */
     display: inline;
     background-color: #1900ff;
     color: white;
@@ -378,7 +378,7 @@ input[type="submit"]:hover {
         margin-left: 10px;
     }
 }
-
+/* the following code is from https://www.w3schools.com/css/css_rwd_viewport.asp */
 /* For non-retina based devices that have a smaller screen */
 @media only screen and (min-width: 320px) {}
 
