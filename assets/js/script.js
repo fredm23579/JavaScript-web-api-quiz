@@ -1,8 +1,8 @@
 // Questions array
 const questions = [ // Define the questions array to use later
     {
-        question: 'What is the output of `console.log(typeof 42)`?', // Question 1 of 20
-        answers: [ // Answer choices for Question 1 of 20 
+        question: 'What is the output of `console.log(typeof 42)`?', // Question 1 of 14
+        answers: [ // Answer choices for Question 1 of 14
             { text: '"number"', correct: true }, // correct answer
             { text: '"object"', correct: false }, // incorrect answer
             { text: '"string"', correct: false }, // incorrect answer
@@ -11,8 +11,8 @@ const questions = [ // Define the questions array to use later
     },
     {
         question:
-            'Which method can be used to convert a JSON string into a JavaScript object?', // Question 2 of 20
-        answers: [ // Answer choices for Question 2 of 20
+            'Which method can be used to convert a JSON string into a JavaScript object?', // Question 2 of 14
+        answers: [ // Answer choices for Question 2 of 14
             { text: 'JSON.parse()', correct: true }, // correct answer
             { text: 'JSON.stringify()', correct: false }, // incorrect answer
             { text: 'JSON.toObject()', correct: false }, // incorrect answer
@@ -20,8 +20,8 @@ const questions = [ // Define the questions array to use later
         ]
     },
     {
-        question: 'How do you create a function in JavaScript?', // Question 3 of 20
-        answers: [ // Answer choices for Question 3 of 20
+        question: 'How do you create a function in JavaScript?', // Question 3 of 14
+        answers: [ // Answer choices for Question 3 of 14
             { text: 'function myFunction() {}', correct: true }, // correct answer
             { text: 'function:myFunction() {}', correct: false }, // incorrect answer
             { text: 'function = myFunction() {}', correct: false }, // incorrect answer
@@ -29,26 +29,26 @@ const questions = [ // Define the questions array to use later
         ]
     },
     {
-        question: 'Which statement creates a new object?',
-        answers: [
-            { text: 'let obj = {};', correct: true },
-            { text: 'let obj = [];', correct: false },
-            { text: 'let obj = () => {};', correct: false },
-            { text: 'let obj = new Array();', correct: false }
+        question: 'Which statement creates a new object?', // Question 4 of 14
+        answers: [ // Answer choices for Question 4 of 14
+            { text: 'let obj = {};', correct: true }, // correct answer
+            { text: 'let obj = [];', correct: false }, // incorrect answer
+            { text: 'let obj = () => {};', correct: false }, // incorrect answer
+            { text: 'let obj = new Array();', correct: false } // incorrect answer
         ]
     },
     {
-        question: 'What will `console.log("5" + 3)` output?',
-        answers: [
-            { text: '"53"', correct: true },
-            { text: '8', correct: false },
-            { text: 'TypeError', correct: false },
-            { text: 'undefined', correct: false }
+        question: 'What will `console.log("5" + 3)` output?', // Question 5 of 14
+        answers: [ // Answer choices for Question 5 of 14
+            { text: '"53"', correct: true }, // correct answer
+            { text: '8', correct: false }, // incorrect answer
+            { text: 'TypeError', correct: false }, // incorrect answer
+            { text: 'undefined', correct: false } // incorrect answer
         ]
     },
     {
-        question: 'How do you add a comment in JavaScript?',
-        answers: [
+        question: 'How do you add a comment in JavaScript?', // Question 6 of 14
+        answers: [ // Answer choices for Question 6 of 14
             { text: '// This is a comment', correct: true },
             { text: '# This is a comment', correct: false },
             { text: '/* This is a comment */', correct: false },
@@ -56,8 +56,8 @@ const questions = [ // Define the questions array to use later
         ]
     },
     {
-        question: 'Which operator is used to assign a value to a variable?',
-        answers: [
+        question: 'Which operator is used to assign a value to a variable?', // Question 7 of 14
+        answers: [ // Answer choices for Question 7 of 14
             { text: '=', correct: true },
             { text: '==', correct: false },
             { text: '===', correct: false },
@@ -65,8 +65,8 @@ const questions = [ // Define the questions array to use later
         ]
     },
     {
-        question: 'What will be the output of `console.log("Hello".length)`?',
-        answers: [
+        question: 'What will be the output of `console.log("Hello".length)`?', // Question 8 of 14
+        answers: [ // Answer choices for Question 8 of 14
             { text: '5', correct: true },
             { text: '"Hello"', correct: false },
             { text: 'undefined', correct: false },
@@ -74,8 +74,8 @@ const questions = [ // Define the questions array to use later
         ]
     },
     {
-        question: 'What is the output of `console.log(typeof 42)`?',
-        answers: [
+        question: 'What is the output of `console.log(typeof 42)`?', // Question 9 of 14
+        answers: [ // Answer choices for Question 9 of 14
             { text: '"number"', correct: true },
             { text: '"object"', correct: false },
             { text: '"string"', correct: false },
@@ -84,8 +84,8 @@ const questions = [ // Define the questions array to use later
     },
     {
         question:
-            'Which method removes the last element from an array and returns that element in JavaScript?',
-        answers: [
+            'Which method removes the last element from an array and returns that element in JavaScript?', // Question 10 of 14
+        answers: [ // Answer choices for Question 10 of 14
             { text: 'pop()', correct: true },
             { text: 'push()', correct: false },
             { text: 'shift()', correct: false },
@@ -94,7 +94,7 @@ const questions = [ // Define the questions array to use later
     },
     {
         question:
-            'What is the correct syntax for referring to an external script called "app.js"?', // Question 17 of 20
+            'What is the correct syntax for referring to an external script called "app.js"?', // Question 11 of 14
         answers: [
             { text: '<script src="app.js"></script>', correct: true }, // correct answer
             { text: '<script href="app.js"></script>', correct: false }, // incorrect answer
@@ -104,7 +104,7 @@ const questions = [ // Define the questions array to use later
     },
     {
         question:
-            'How do you write a conditional statement for executing some statements only if "i" is NOT equal to 5?', // Question 18 of 20
+            'How do you write a conditional statement for executing some statements only if "i" is NOT equal to 5?', // Question 12 of 14
         answers: [
             { text: 'if (i != 5)', correct: true }, // correct answer
             { text: 'if i <> 5', correct: false }, // incorrect answer
@@ -113,7 +113,7 @@ const questions = [ // Define the questions array to use later
         ]
     },
     {
-        question: 'Which event occurs when the user clicks on an HTML element?', // Question 19 of 20
+        question: 'Which event occurs when the user clicks on an HTML element?', // Question 13 of 14
         answers: [
             { text: 'onclick', correct: true }, // correct answer
             { text: 'onchange', correct: false }, // incorrect answer
@@ -122,7 +122,7 @@ const questions = [ // Define the questions array to use later
         ]
     },
     {
-        question: 'How do you declare a JavaScript variable?', // Question 20 of 20
+        question: 'How do you declare a JavaScript variable?', // Question 14 of 14
         answers: [
             { text: 'var myVariable;', correct: true }, // correct answer
             { text: 'v myVariable;', correct: false }, // incorrect answer
@@ -131,7 +131,7 @@ const questions = [ // Define the questions array to use later
         ]
     }
 ]
-// shuffle array function
+// shuffle array function for questions and answers
 function shuffleArray(array) { // Define a function to shuffle the array
     return array.sort(() => Math.random() - 0.5) // Shuffle the array using the sort method and the Math.random method
 }
