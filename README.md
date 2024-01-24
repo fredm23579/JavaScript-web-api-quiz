@@ -30,17 +30,14 @@ THEN I can save my initials and my score
 
 The following images preview the application's functionality:
 
-![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./assets/imgs/img1.jpeg
-gif)
-![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./assets/imgs/img2.jpeg
-gif)
-![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./assets/imgs/img3.jpeg
-gif)
+![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./assets/imgs/img1.jpeg)
+![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./assets/imgs/img2.jpeg)
+![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./assets/imgs/img3.jpeg)
 
 ## Links to code Repository and Functioning web Application site: 
 
 ```
- Link to working application: 
+ Link to working application: https://github.com/fredm23579/JavaScript-web-api-quiz
 
- Link to GitHub Code Repository:
+ Link to GitHub Code Repository: https://fredm23579.github.io/JavaScript-web-api-quiz/
 ```
