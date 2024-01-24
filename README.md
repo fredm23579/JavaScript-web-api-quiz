@@ -30,9 +30,9 @@ THEN I can save my initials and my score
 
 The following images preview the application's functionality:
 
-![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./assets/imgs/img1.jpeg)
-![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./assets/imgs/img2.jpeg)
 ![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./assets/imgs/img3.jpeg)
+![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./assets/imgs/img2.jpeg)
+![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./assets/imgs/img1.jpeg)
 
 ## Links to code Repository and Functioning web Application site: 
 
