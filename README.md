@@ -1,4 +1,4 @@
-# Web APIs: JavaScript-web-api-quiz 
+# Web API: JavaScript-web-api-quiz 
 
 ## Code Quiz Challenge
 
@@ -36,8 +36,12 @@ The following images preview the application's functionality:
 
 ## Links to code Repository and Functioning web Application site: 
 
-```
- Link to working application: https://github.com/fredm23579/JavaScript-web-api-quiz
 
- Link to GitHub Code Repository: https://fredm23579.github.io/JavaScript-web-api-quiz/
-```
+ Link to working application: 
+ 
+ https://github.com/fredm23579/JavaScript-web-api-quiz
+
+ Link to GitHub Code Repository: 
+ 
+ https://fredm23579.github.io/JavaScript-web-api-quiz/
+
