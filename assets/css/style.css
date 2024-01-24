@@ -35,17 +35,12 @@ h1 {
     right: 20px;
 
     bottom: 20px;
-    position: fixed;
+    position: unset;
     z-index: 100;
     background-color: white;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    max-width: 200px;
-    min-width: 200px;
-    max-height: 200px;
-    min-height: 200px;
-
     font-size: 16px;
 }
 
@@ -61,7 +56,7 @@ input {
 
 button {
     display: inline;
-    background-color: #007bff;
+    background-color: #1900ff;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -116,7 +111,7 @@ button:hover {
     position: fixed;
     top: 20px;
     right: 20px;
-    background-color: #007bff;
+    background-color: #3700ff;
     color: white;
     padding: 10px 15px;
     border-radius: 5px;
