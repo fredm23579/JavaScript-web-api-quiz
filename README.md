@@ -38,10 +38,10 @@ The following images preview the application's functionality:
 
 
  Link to working application: 
- 
- https://github.com/fredm23579/JavaScript-web-api-quiz
+
+  https://fredm23579.github.io/JavaScript-web-api-quiz/
 
  Link to GitHub Code Repository: 
  
- https://fredm23579.github.io/JavaScript-web-api-quiz/
+  https://github.com/fredm23579/JavaScript-web-api-quiz
 
