@@ -46,7 +46,7 @@ The following images preview the application's functionality:
   https://github.com/fredm23579/JavaScript-web-api-quiz
 
   ## Contact Info:
-  For questions or comments, please contact us at motta@g.ucla.edu.
+  For questions or comments, please contact me at motta@g.ucla.edu.
   ---
 
 
