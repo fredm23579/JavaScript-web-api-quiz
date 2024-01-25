@@ -37,13 +37,13 @@ The following images preview the application's functionality:
 ## Links to code Repository and Functioning web Application site: 
 
 
- Link to working application: 
+ * Link to working application: 
 
-  https://fredm23579.github.io/JavaScript-web-api-quiz/
+    https://fredm23579.github.io/JavaScript-web-api-quiz/
 
- Link to GitHub Code Repository: 
+ * Link to GitHub Code Repository: 
  
-  https://github.com/fredm23579/JavaScript-web-api-quiz
+    https://github.com/fredm23579/JavaScript-web-api-quiz
 
   ## Contact Info:
   For questions or comments, please contact me at motta@g.ucla.edu.
