@@ -1,8 +1,8 @@
-# Web API: JavaScript-web-api-quiz 
+# DOM Web API: JavaScript-web-api-quiz 
 
-## Code Quiz Challenge
+## Code Quiz
 
-## User Story
+## User Story Scenario
 
 ```
 AS A coding boot camp student
@@ -10,7 +10,7 @@ I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
 SO THAT I can gauge my progress compared to my peers
 ```
 
-## Acceptance Criteria
+## Application Acceptance Criteria
 
 ```
 GIVEN I am taking a code quiz
